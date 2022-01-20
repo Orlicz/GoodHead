@@ -1,5 +1,5 @@
 #pragma region GoodHead
-#define SafeStyle 1
+#define SafeStyle 0
 
 #define _CRT_SECURE_NO_WARNINGS
 #if SafeStyle
@@ -88,10 +88,15 @@
 		#ifdef USE_FUN
 			template<typename T>
 			atline void read(register T& x) { x = 0; while (!isdigit(ch = tc())); while (x = ten(x) + (ch & 15), isdigit(ch = tc())); }
-			atline void read(register char*& x) { register char index = 0; for (; ((x[index] = tc()) != ' ') && (x[index] != '\n'); ++index); x[index] = '\0'; }
+			atline void read(register char*& x) { register unsigned char index = 0; for (; ((x[index] = tc()) != ' ') && (x[index] != '\n'); ++index); x[index] = '\0'; }
 			atline void read(register char& x) { x = tc(); }
 			template<typename T, typename... I>
 			atline void read(T& x, I&... y) { read(x), read(y...); }
+			template<typename... I>
+			atline void read(I*... x) { read(*x...); }
+			template<typename... I>
+			atline void read(const char* null,I*... x) { read(*x...); }
+
 			template<typename T = long long>
 			atline T read() { T ret, read(ret); return ret; }
 			
