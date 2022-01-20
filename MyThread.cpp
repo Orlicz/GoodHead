@@ -1,0 +1,1 @@
+#define gorun(Name,Code,Args...) do{thread Name([&](){Code}, __VA_ARGS__);Name.detch();}while(0) 
