@@ -18,7 +18,7 @@ inline void read(register char& x) { x = getchar(); }
 inline void read(register char* x) { while ((*(x++) = getchar()) != '\n'); *(--x) = '\0'; }
 template<typename T, typename... Args>inline void read(register T& x, register Args&... args) { read(x), read(args...); }
 
-template<typename T> inline void write(register T& x) {if (!x)return (void)(putchar('0'));if (x < 0)putchar('-'),x = -x;while (x)Stack[++Top] = (x % 10) ^ 48, x /= 10;while (Top)putchar(Stack[Top--]);}
+template<typename T> inline void write(register T x) {if (!x)return (void)(putchar('0'));if (x < 0)putchar('-'),x = -x;while (x)Stack[++Top] = (x % 10) ^ 48, x /= 10;while (Top)putchar(Stack[Top--]);}
 inline void write(register char& x) { putchar(x); }
 inline void write(register char* x) { while (putchar(*(x++)), *x ^ '\0'); }
 template<typename T, typename... Args> inline void write(register T x, register Args... args) { write(x), write(args...); }
