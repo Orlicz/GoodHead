@@ -41,7 +41,7 @@ inline int clear() { fwrite(Fout, 1, FoutSize, stdout); return FoutSize = 0; }
 
 
 template<Int T>
-T power(T&& a, T&& b, T&& c) {//¿ìËÙÃİ
+T power(T&& a, T&& b, T&& c) {//Â¿Ã¬Ã‹Ã™ÃƒÃ
 	if (b == 0)
 		return 1 % c;
 	long long ans = 1, t = a;
